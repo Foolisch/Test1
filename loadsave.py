@@ -46,16 +46,16 @@ from json import dumps as json_dumps
 
 def dump(o, f):
     if renpy.config.use_cpickle:
-        cPickle.dump(o, f, cPickle.HIGHEST_PROTOCOL)
+        cPickle.dump(o, f, cPickle.HIGHEST_PROTOCOL), -1)
     else:
-        pickle.dump(o, f, pickle.HIGHEST_PROTOCOL)
+        pickle.dump(o, f, pickle.HIGHEST_PROTOCOL), -1)
 
 
 def dumps(o):
     if renpy.config.use_cpickle:
-        return cPickle.dumps(o, cPickle.HIGHEST_PROTOCOL)
+        return cPickle.dumps(o, cPickle.HIGHEST_PROTOCOL), -1)
     else:
-        return pickle.dumps(o, pickle.HIGHEST_PROTOCOL)
+        return pickle.dumps(o, pickle.HIGHEST_PROTOCOL), -1)
 
 
 def loads(s):
